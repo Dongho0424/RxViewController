@@ -15,6 +15,6 @@ let package = Package(
   ],
   targets: [
     .target(name: "RxViewController", dependencies: ["RxSwift", "RxCocoa"]),
-    .testTarget(name: "RxViewControllerTests", dependencies: ["RxViewController", "RxExpect"]),
+    .testTarget(name: "RxViewControllerTests", dependencies: ["RxViewController"]),
   ]
 )
