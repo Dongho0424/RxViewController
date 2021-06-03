@@ -11,10 +11,12 @@ let package = Package(
     .library(name: "RxViewController", targets: ["RxViewController"]),
   ],
   dependencies: [
-    .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "6.0.0")),
+    .package(url: "https://github.com/ReactiveX/RxSwift.git", from: "6.0.0"),
   ],
   targets: [
-    .target(name: "RxViewController", dependencies: ["RxSwift", "RxCocoa"]),
+    .target(name: "RxViewController", dependencies: [
+        .product(name: "RxCocoa", package: "RxSwift")
+    ]),
     .testTarget(name: "RxViewControllerTests", dependencies: ["RxViewController"]),
   ]
 )
